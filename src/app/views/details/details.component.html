@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" *ngIf="isLoading">
+      <app-spinner></app-spinner>
+    </div>
+    <div class="col-sm-12" *ngIf="!isLoading">
+      <p>details works!</p>
+      <h1>{{ indicator }}</h1>
+    </div>
+  </div>
+</div>

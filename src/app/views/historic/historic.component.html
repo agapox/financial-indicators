@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mt-4 mb-4">
+      <h2>Histórico de indicadores financieros</h2>
+      <ng-container *ngIf="isLoading">
+        <app-spinner></app-spinner>
+      </ng-container>
+      <ng-container *ngIf="!isLoading">
+        <h1 class="mt-4 mb-3">{{ indicator?.nombre }}</h1>
+
+        <div *ngFor="let serie of series">
+          <app-indicator-item [indicator]="serie" type="historic"></app-indicator-item>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
