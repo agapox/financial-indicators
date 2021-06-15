@@ -32,9 +32,15 @@ This app shows 3 views of the data obtained by the API, which are the following:
 
 &nbsp;
 
+
 # How to run the project 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
+
+## Installing the project localy
+* First Clone the repository, running in the command line this commad `git clone https://github.com/agapox/financial-indicators.git`.
+* Second you have to install the dependencies of the project, enter the project folder and run `npm install` or `npm i`.
+* Then you are goog to go with the rest of the steps down bellow.
 
 ## Development server
 
