@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './components/header/header.module';
+import { IndicatorItemModule } from './components/indicator-item/indicator-item.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { HeaderModule } from './components/header/header.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeaderModule
+    HttpClientModule,
+    HeaderModule,
+    IndicatorItemModule
   ],
   providers: [],
   bootstrap: [AppComponent]
