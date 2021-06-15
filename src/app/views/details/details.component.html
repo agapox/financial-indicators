@@ -1,11 +1,35 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12" *ngIf="isLoading">
+    <div class="col-sm-12 mb-4 mt-4" *ngIf="isLoading">
       <app-spinner></app-spinner>
     </div>
-    <div class="col-sm-12" *ngIf="!isLoading">
-      <p>details works!</p>
-      <h1>{{ indicator }}</h1>
+    <div class="col-sm-12 mb-4 mt-5" *ngIf="!isLoading">
+      <h1>Detalles del indicador <strong>{{ indicator.nombre }}</strong></h1>
+
+      <div class="mt-5">
+        <p>Código: <strong>{{ indicator.codigo }}</strong></p>
+        <p>Nombre: <strong>{{ indicator.nombre }}</strong></p>
+        <p>
+          Valor:
+          <strong [ngSwitch]="indicator.unidad_medida">
+            <ng-container *ngSwitchCase="'Porcentaje'">
+              {{ indicator.valor | percent }}
+            </ng-container>
+            <ng-container *ngSwitchCase="'Pesos'">
+              {{ indicator.valor | currency: "CLP $ ":"symbol":"1.0-2" }}
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              {{ indicator.valor | currency: "USD $ ":"symbol":"1.0-2" }}
+            </ng-container>
+          </strong>
+        </p>
+        <p>Fecha: <strong>{{ indicator.fecha | date : 'dd/MM/yyyy hh:mm a' }}</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <button type="button" class="btn btn-primary" (click)="goTo()">Ir al Inicio</button>
     </div>
   </div>
 </div>
