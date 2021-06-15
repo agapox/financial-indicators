@@ -1,0 +1,90 @@
+@import '../../../assets/styles/variables';
+
+:host {
+  .indicator {
+    width: 100%;
+    font-size: 14px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 20% 25% calc(100% - 65% - 16px - #{16*4}px) 20% 16px;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    margin: 4px 0;
+    box-shadow: 0px 0px 12px rgba(#7090b0, .2);
+    transition: border-color .1s ease-in-out;
+    &:hover {
+      border-color: rgba(#7090b0, .4);
+      transition: border-color .1s ease-in-out;
+    }
+
+    @media screen and (max-width: $media_lg) {
+      display: block;
+    }
+
+    &__date {
+      @media screen and (max-width: $media_lg) {
+        margin-bottom: 16px;
+      }
+    }
+    &__hour {
+      font-size: 10px;
+      font-weight: bold;
+    }
+    &__code {
+      text-transform: uppercase;
+      @media screen and (max-width: $media_lg) {
+        font-weight: bold;
+      }
+    }
+    &__name {
+      @media screen and (max-width: $media_lg) {
+        margin-bottom: 16px;
+      }
+    }
+    &__value {
+      text-align: right;
+      @media screen and (max-width: $media_lg) {
+        text-align: left;
+        font-weight: bold;
+      }
+    }
+
+    &__icon {
+      text-align: right;
+      @media screen and (max-width: $media_lg) {
+        display: none;
+      }
+      a {
+        cursor: pointer;
+        width: 6px;
+        &::after {
+          content: unset;
+        }
+      }
+      img {
+        max-width: 16px;
+        height: auto;
+        vertical-align: sub;
+      }
+      .info {
+        margin-right: 8px;
+      }
+
+      .dropdown-menu {
+        width: 160px;
+        transform: translate3d(-126px, 21px, 0px) !important;
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+    &__actions {
+      display: none;
+      @media screen and (max-width: $media_lg) {
+        display: block;
+      }
+    }
+  }
+}
