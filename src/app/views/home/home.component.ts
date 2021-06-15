@@ -34,11 +34,19 @@ export class HomeComponent implements OnInit {
         }
       })
       this.dateCall = new Date(theDate);
+      this.saveDataSessionStorage(data);
       console.log(this.dateCall);
       console.log(this.indicators);
       const timerLoading = timer(600);
       timerLoading.subscribe(() => this.isLoading = false);
     });
+  }
+
+  saveDataSessionStorage(rawData: any) {
+    if (typeof(Storage) !== 'undefined') {
+      console.log(rawData)
+      sessionStorage.setItem('indicators', JSON.stringify(rawData));
+    }
   }
 
 }
