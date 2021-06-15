@@ -1,4 +1,38 @@
-# FinancialIndicators
+# Financial Indicators Challenge
+
+### Single page aplication created with Angular
+&nbsp;
+## Challenge description
+
+##### Create a webapp that get data from the API `https://mindicador.cl/` and show data in the app.
+The API `https://mindicador.cl/` collects data of some important indicators, especified bellow:
+* uf
+* ivp
+* dolar
+* dolar_intercambio
+* euro
+* ipc
+* utm
+* imacec
+* tpm
+* libra_cobre
+* tasa_desempleo
+* bitcoin
+
+This app shows 3 views of the data obtained by the API, which are the following:
+* Home: Shows a list of the indicators current value. Route => `/`
+* Details: Shows the detailed information of a selected indicator. Route => `/details`
+* Historic: Shows the historical information of a selected indicator. Route => `/historic`
+&nbsp;
+
+## :+1: Requirements
+* A good README.md :ok_hand:
+* Use of Angular +11.
+* Implement the use of the `API` endpoint to get data.
+
+&nbsp;
+
+# How to run the project 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
 
@@ -25,3 +59,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+&nbsp;
+
+Rock and Roll
+:rocket: :metal: :rocket: :metal:  
+
+&nbsp;&nbsp;&nbsp;
