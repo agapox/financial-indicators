@@ -1,11 +1,11 @@
-<div class="indicator card" *ngIf="indicator">
+<div class="indicator card" *ngIf="indicator" [ngClass]="{'historic': type === 'historic'}">
   <div class="indicator__date">
     {{ indicator.fecha | date: "dd/MM/yyyy" }}
     <span class="indicator__hour">{{ indicator.fecha | date: "h:mm a" }}</span>
   </div>
   <div class="indicator__code">{{ indicator.codigo }}</div>
   <div class="indicator__name">{{ indicator.nombre }}</div>
-  <div  class="indicator__value text-md-left" [ngSwitch]="indicator.unidad_medida">
+  <div  class="indicator__value text-md-left text-lg-right" [ngSwitch]="indicator.unidad_medida">
     <ng-container *ngSwitchCase="'Porcentaje'">
       {{ indicator.valor | percent }}
     </ng-container>
@@ -16,17 +16,17 @@
       {{ indicator.valor | currency: "USD $ ":"symbol":"1.0-2" }}
     </ng-container>
   </div>
-  <div class="indicator__icon dropdown">
+  <div class="indicator__icon dropdown" *ngIf="type !== 'historic'">
     <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <img src="../../../assets/images/icon-action-menu.svg" alt="More Information">
     </a>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Detalles</a>
-      <a class="dropdown-item" href="#">Histórico</a>
+      <a class="dropdown-item" (click)="goTo('details')">Detalles</a>
+      <a class="dropdown-item" (click)="goTo('historic')">Histórico</a>
     </div>
   </div>
-  <div class="indicator__actions text-right mt-4 mb-2">
-    <button type="button" class="btn btn-outline-primary btn-sm">Detalles</button>
-    <button type="button" class="btn btn-primary ml-2 btn-sm">Histórico</button>
+  <div class="indicator__actions text-right mt-4 mb-2" *ngIf="type !== 'historic'">
+    <button type="button" class="btn btn-outline-primary btn-sm" (click)="goTo('details')">Detalles</button>
+    <button type="button" class="btn btn-primary ml-2 btn-sm" (click)="goTo('historic')">Histórico</button>
   </div>
 </div>

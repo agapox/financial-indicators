@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IndicatorInterface } from 'src/app/shared/interfaces/indicator.interface';
 
 @Component({
   selector: 'app-indicator-item',
@@ -7,17 +9,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class IndicatorItemComponent implements OnInit {
 
-  @Input() indicator: {
-    codigo: string,
-    fecha: string,
-    nombre: string,
-    unidad_medida: 'Porcentaje' | 'Dólar' | 'Peso',
-    valor: number
-  } | undefined;
+  @Input() indicator: IndicatorInterface | undefined;
+  @Input() type: 'historic' | '' = '';
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  goTo(url: string) {
+    this.router.navigate([url, this.indicator?.codigo.toLowerCase()])
   }
 
 }
