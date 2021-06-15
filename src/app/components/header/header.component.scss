@@ -1,0 +1,13 @@
+@import '../../../assets/styles/variables';
+
+:host {
+  header {
+    background-color: $primary_color;
+
+    .navbar-brand {
+      img {
+        max-width: 160px;
+      }
+    }
+  }
+}
