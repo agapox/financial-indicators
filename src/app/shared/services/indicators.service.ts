@@ -11,7 +11,7 @@ import { IndicatorHistoricInterface } from '../interfaces/indicator-historic.int
 })
 export class IndicatorsService {
 
-  production = false;
+  production = true;
 
   url = 'https://mindicador.cl/api';
 
