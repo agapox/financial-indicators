@@ -5,7 +5,6 @@
   </div>
   <div class="indicator__code">{{ indicator.codigo }}</div>
   <div class="indicator__name">{{ indicator.nombre }}</div>
-  <!-- <div class="indicator__unit">{{ indicator.unidad_medida }}</div> -->
   <div  class="indicator__value text-md-left" [ngSwitch]="indicator.unidad_medida">
     <ng-container *ngSwitchCase="'Porcentaje'">
       {{ indicator.valor | percent }}
